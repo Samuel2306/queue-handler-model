@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../utils/utils.js"></script>
+<script src="./index.js"></script>
+<script>
+  function beforeFunc(){
+    console.log(1)
+  }
+  function myFunc(){
+    console.log(2)
+  }
+  function afterFunc(){
+    console.log(3)
+  }
+  myFunc = myFunc.before(beforeFunc)
+  myFunc = myFunc.after(afterFunc)
+  myFunc()
+</script>
+</html>

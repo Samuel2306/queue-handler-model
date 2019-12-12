@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../utils/utils.js"></script>
+<script src="../ProtoExtend/index.js"></script>
+<script src="../utils/ArrayTool.js"></script>
+<script src="./index.js"></script>
+<script>
+  function total(res,arr){
+    for (var i = 0; i < arr.length; i++) {
+      res += arr[i]
+    }
+    return res
+  }
+  var fns = [
+    function(){
+      var res = total(2,arguments)
+      console.log(res)
+      return res
+    },
+    function(){
+      var res = total(3,arguments)
+      console.log(res)
+      return res
+    },
+    function(){
+      var res = total(4,arguments)
+      console.log(res)
+      return res
+    }
+  ]
+
+  var queue = new Compose(fns)
+  var handler = queue.init()
+  handler(1)
+  queue.shiftFromArray(0)
+  handler(1)
+
+</script>
+</html>
